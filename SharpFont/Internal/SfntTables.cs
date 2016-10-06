@@ -236,9 +236,10 @@ namespace SharpFont {
                 if (platform == PlatformID.Microsoft) {
                     if (encoding != WindowsEncoding.UnicodeBmp && encoding != WindowsEncoding.UnicodeFull)
                         continue;
-
+#if !NETCORE
                     if (language != CultureInfo.CurrentCulture.LCID)
                         continue;
+#endif
                 }
                 else if (platform != PlatformID.Unicode)
                     continue;

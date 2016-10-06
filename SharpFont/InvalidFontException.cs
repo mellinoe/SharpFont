@@ -1,11 +1,15 @@
 ﻿using System;
+#if !NETCORE
 using System.Runtime.Serialization;
+#endif
 
 namespace SharpFont {
     /// <summary>
     /// Represents errors that occur due to invalid data in a font file.
     /// </summary>
+#if !NETCORE
     [Serializable]
+#endif
     public class InvalidFontException : Exception {
         /// <summary>
         /// Initializes a new instance of the <see cref="InvalidFontException"/> class.
@@ -30,6 +34,7 @@ namespace SharpFont {
             : base(message, innerException) {
         }
 
+#if !NETCORE
         /// <summary>
         /// Initializes a new instance of the <see cref="InvalidFontException"/> class.
         /// </summary>
@@ -40,5 +45,6 @@ namespace SharpFont {
         protected InvalidFontException (SerializationInfo info, StreamingContext context)
             : base(info, context) {
         }
+#endif
     }
 }

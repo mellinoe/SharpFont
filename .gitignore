@@ -31,3 +31,4 @@ _ReSharper*/
 *.sln.ide/
 .vs/
 *.vspx
+*lock.json

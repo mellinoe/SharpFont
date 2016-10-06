@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.props))\dir.props" />
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SharpFont</RootNamespace>
+    <AssemblyName>SharpFont</AssemblyName>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>$(DefineConstants);NETCORE</DefineConstants>
+    <NuGetTargetMoniker>.NETStandard,Version=v1.3</NuGetTargetMoniker>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " />
+  <ItemGroup>
+    <Compile Include="Internal\BinPacker.cs" />
+    <Compile Include="Internal\SbitTable.cs" />
+    <Compile Include="Internal\CharacterMap.cs" />
+    <Compile Include="Internal\DataReader.cs" />
+    <Compile Include="FontCollection.cs" />
+    <Compile Include="Internal\Interpreter.cs" />
+    <Compile Include="InvalidFontException.cs" />
+    <Compile Include="FontFace.cs" />
+    <Compile Include="Internal\Geometry.cs" />
+    <Compile Include="Internal\KerningTable.cs" />
+    <Compile Include="TextAnalyzer.cs" />
+    <Compile Include="Metrics.cs" />
+    <Compile Include="Internal\Renderer.cs" />
+    <Compile Include="Internal\SfntTables.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TextFormat.cs" />
+    <Compile Include="TextLayout.cs" />
+  </ItemGroup>
+  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.targets))\dir.targets" />
+</Project>

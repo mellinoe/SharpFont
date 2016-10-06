@@ -98,11 +98,12 @@ namespace SharpFont {
         static FontCollection LoadSystemFonts () {
             // TODO: currently only supports Windows
             var collection = new FontCollection();
+#if !NETCORE
             foreach (var file in Directory.EnumerateFiles(Environment.GetFolderPath(Environment.SpecialFolder.Fonts))) {
                 if (SupportedExtensions.Contains(Path.GetExtension(file).ToLowerInvariant()))
                     collection.AddFontFile(file, throwOnError: false);
             }
-
+#endif
             return collection;
         }
 
