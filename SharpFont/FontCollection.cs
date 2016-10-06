@@ -72,9 +72,16 @@ namespace SharpFont {
 
         void AddFontFile (string fileName, bool throwOnError) {
             using (var stream = File.OpenRead(fileName)) {
-                var metadata = LoadMetadata(stream);
-                metadata.FileName = fileName;
-                AddFile(metadata, throwOnError);
+                try
+                {
+                    var metadata = LoadMetadata(stream);
+                    metadata.FileName = fileName;
+                    AddFile(metadata, throwOnError);
+                }
+                catch when (throwOnError == false)
+                {
+                    return;
+                }
             }
         }
 
