@@ -8,6 +8,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <DefineConstants>$(DefineConstants);NETCORE</DefineConstants>
     <NuGetTargetMoniker>.NETStandard,Version=v1.3</NuGetTargetMoniker>
+    <ProjectGuid>{BB53DFB7-DE33-4157-8E09-FE3E9D045369}</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' " />
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " />
